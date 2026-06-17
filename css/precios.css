@@ -1,0 +1,264 @@
+/* ARCHIVO: precios.css CORREGIDO */
+
+:root {
+  --pink-nav: #f5c6d8;
+  --pink-light: #fde8f0;
+  --pink-mid: #f9a8c9;
+  --pink-accent: #e87caa;
+  --pink-dark: #c25c8a;
+  --text-dark: #2d2d2d;
+  --text-mid: #555;
+  --white: #fff;
+  --card-shadow: 0 4px 18px rgba(200,100,150,0.12);
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  font-family: 'Montserrat', sans-serif; 
+  color: var(--text-dark); 
+  background: var(--white); 
+}
+
+/* NAVBAR */
+nav { 
+  background: var(--pink-nav); 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 14px 40px; 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+  box-shadow: 0 2px 12px rgba(200,100,150,0.15); 
+}
+
+.logo { 
+  display: flex; 
+  flex-direction: column; 
+  line-height: 1.1; 
+}
+
+.logo-main { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 1.8rem; 
+  color: var(--pink-dark); 
+}
+
+.logo-sub { 
+  font-size: 0.6rem; 
+  letter-spacing: 0.1em; 
+  color: var(--text-mid); 
+  text-transform: uppercase; 
+}
+
+.nav-links { 
+  display: flex; 
+  gap: 32px; 
+  list-style: none; 
+  align-items: center; 
+  margin-left: auto; 
+  margin-right: 40px; 
+}
+
+.nav-links a { 
+  text-decoration: none; 
+  font-size: 0.78rem; 
+  font-weight: 600; 
+  letter-spacing: 0.08em; 
+  text-transform: uppercase; 
+  color: var(--text-dark); 
+  transition: color .2s; 
+}
+
+.nav-links a:hover, .nav-links a.active { 
+  color: var(--pink-accent); 
+}
+
+/* REDES SOCIALES NAVBAR */
+.nav-socials { 
+  display: flex; 
+  gap: 16px; 
+  align-items: center; 
+}
+
+.nav-socials a { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-decoration: none; 
+  transition: transform 0.2s; 
+}
+
+.nav-socials a:hover { 
+  transform: scale(1.15); 
+}
+
+.nav-socials svg { 
+  width: 20px; 
+  height: 20px; 
+  fill: var(--pink-accent); 
+}
+
+/* TITLES & DIVIDER */
+.section-title { 
+  text-align: center; 
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 2.2rem; 
+  font-weight: 600; 
+  color: var(--text-dark); 
+  margin-top: 40px; 
+  margin-bottom: 10px; 
+}
+
+.divider { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 12px; 
+  margin-bottom: 40px; 
+}
+
+.divider::before, .divider::after { 
+  content: ''; 
+  flex: 1; 
+  max-width: 160px; 
+  height: 1px; 
+  background: #ddd; 
+}
+
+.divider .heart { 
+  font-size: 1.1rem; 
+  color: var(--pink-accent); 
+}
+
+/* PRICES */
+#precios { 
+  padding: 40px; 
+  background: var(--white); 
+  min-height: 75vh; 
+}
+
+.prices-inner { 
+  max-width: 860px; 
+  margin: 0 auto; 
+  display: grid; 
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 48px; 
+  align-items: center; 
+}
+
+.prices-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 14px; 
+}
+
+.price-row { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 14px 20px; 
+  border: 1.5px solid var(--pink-mid); 
+  border-radius: 8px; 
+  font-size: 0.85rem; 
+  font-weight: 500; 
+  color: var(--text-dark); 
+  background: var(--pink-light); 
+  transition: background .2s, transform .2s; 
+}
+
+.price-row:hover { 
+  background: #fcc8df; 
+  transform: translateX(4px); 
+}
+
+.price-row .price-val { 
+  font-weight: 600; 
+  color: var(--pink-dark); 
+  font-size: 0.95rem; 
+}
+
+/* CONTENEDOR DEL CARRUSEL */
+.prices-image { 
+  border-radius: 12px; 
+  overflow: hidden; 
+  box-shadow: var(--card-shadow); 
+  width: 100%; 
+  height: 100%; 
+  max-height: 420px; 
+  position: relative; 
+}
+
+.carrusel-fotos {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out; 
+}
+
+.carrusel-fotos img { 
+  width: 100%; 
+  height: 420px; 
+  object-fit: cover; 
+  display: block;
+  flex-shrink: 0; 
+}
+
+/* Flechas del carrusel */
+.btn-carrusel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 1rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: var(--pink-accent);
+  transition: background-color 0.3s, transform 0.2s;
+  user-select: none;
+}
+
+.btn-carrusel:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.btn-carrusel:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.btn-anterior { left: 12px; }
+.btn-siguiente { right: 12px; }
+
+footer { 
+  background: var(--pink-nav); 
+  text-align: center; 
+  padding: 22px 40px; 
+  font-size: 0.72rem; 
+  color: var(--text-mid); 
+  margin-top: 40px; 
+}
+
+footer .footer-hearts { 
+  color: var(--pink-accent); 
+  margin-bottom: 4px; 
+  font-size: 0.85rem; 
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  nav { padding: 12px 20px; flex-direction: column; gap: 10px; }
+  .nav-links { margin: 0; gap: 14px; }
+  .nav-links a { font-size: 0.65rem; }
+  .nav-socials { display: none; }
+  #precios { padding: 20px 20px; }
+  .prices-inner { grid-template-columns: 1fr; gap: 32px; }
+  .prices-image { max-height: 350px; }
+  .carrusel-fotos img { height: 350px; }
+}
