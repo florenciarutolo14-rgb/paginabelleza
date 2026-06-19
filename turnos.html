@@ -27,32 +27,67 @@
     <div class="divider"><span class="heart">♥️</span></div>
     <div class="turnos-inner">
       
-      <form netlify id="form-turnos">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" id="nombre" placeholder="Escribí tu nombre" required />
-        </div>
-        <div class="form-group">
-          <label>Servicio</label>
-          <select id="servicio" required>
-            <option value="" disabled selected>Seleccioná un servicio</option>
-            <option value="Uñas de gel">Uñas de gel</option>
-            <option value="Semipermanente en manos">Semipermanente en manos</option>
-            <option value="Semipermanente en pies">Semipermanente en pies</option>
-            <option value="Kapping gel">Kapping gel</option>
-            <option value="Nail art">Nail art</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Fecha</label>
-          <input type="date" id="fecha" required />
-        </div>
-        <div class="form-group">
-          <label>Hora</label>
-          <input type="time" id="hora" required />
-        </div>
-        <button type="submit" class="btn-primary">Reservar turno</button>
-      </form>
+      <div class="container">
+        <h1>Reserva tu Cita</h1>
+        <p class="texto-descripcion"> 
+          Completa el formulario y nos pondremos en contacto 
+        </p>
+        
+        <form netlify name="reserva" action="" method="post">
+          <input type="hidden" name="form-name" value="reserva">
+          
+          <div class="form-group">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+    
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="(55) 1234 5678">
+          </div>
+    
+          <div class="form-group">
+            <label for="servicio">Servicio:</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="manicura">Manicura</option>
+              <option value="acrilico">Uñas semipermanentes</option>
+              <option value="gel">Uñas en gel</option>
+              <option value="nailart">Nail Art</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="fecha">Fecha preferida:</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+    
+          <div class="form-group">
+            <label>Preferencia de contacto:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="contacto" value="whatsapp" checked> WhatsApp</label>
+              <label><input type="radio" name="contacto" value="email"> Email</label>
+              <label><input type="radio" name="contacto" value="llamada"> Llamada</label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="novedades" value="si">
+              Quiero recibir novedades y promociones
+            </label>
+          </div>
+    
+          <div class="buttons">
+            <button type="submit" class="btn-primary">Enviar reserva</button>
+          </div>
+        </form>
+      </div>
 
       <div>
         <div class="caja-imagen-agenda">
@@ -86,7 +121,6 @@
     <div>© 2026. Belleza by Florencia Belén</div>
   </footer>
 
-  <script src="js/script.js"></script>
 
 </body>
 </html>
